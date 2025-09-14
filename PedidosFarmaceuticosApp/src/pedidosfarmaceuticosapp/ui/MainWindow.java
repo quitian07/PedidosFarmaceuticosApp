@@ -2,6 +2,9 @@ package pedidosfarmaceuticosapp.ui;
 
 import pedidosfarmaceuticosapp.model.Order;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+
 
 
 public class MainWindow extends javax.swing.JFrame {
@@ -13,6 +16,22 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+        
+        
+
+ImageIcon icon = new ImageIcon(getClass().getResource("/media/logoNoCopy.png"));
+Image image = icon.getImage().getScaledInstance(jlLogo.getWidth(), jlLogo.getHeight(), Image.SCALE_SMOOTH);
+jlLogo.setIcon(new ImageIcon(image));
+jlLogo.setText("");
+
+        
+        getContentPane().setBackground(new java.awt.Color(230, 245, 255, 200));
+        btnConfirmar.setBackground(new java.awt.Color(153, 204, 255)); 
+        btnConfirmar.setForeground(new java.awt.Color(0, 51, 102));   
+
+        btnBorrar.setBackground(new java.awt.Color(255, 204, 204)); 
+        btnBorrar.setForeground(new java.awt.Color(102, 0, 0));
+        jlHome.setForeground(new java.awt.Color(0, 102, 102)); 
     }
 
     /**
@@ -30,7 +49,6 @@ public class MainWindow extends javax.swing.JFrame {
         txtMedicinename = new javax.swing.JTextField();
         jlType = new javax.swing.JLabel();
         cbMedicineType = new javax.swing.JComboBox<>();
-        jlUsers = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
         jlDistribuitor = new javax.swing.JLabel();
@@ -42,11 +60,12 @@ public class MainWindow extends javax.swing.JFrame {
         chkSecundaria = new javax.swing.JCheckBox();
         btnBorrar = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
+        jlLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplicación Farmaceutica");
 
-        jlHome.setText("Home");
+        jlHome.setText("Sistema de pedidos de medicamentos");
 
         jlMedicamento.setText("Nombre del medicamento:");
 
@@ -60,8 +79,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         cbMedicineType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Analgésico", "Analéptico", "Anestésico", "Antálgico", "Antidepresivo", "Antibiótico" }));
 
-        jlUsers.setText("Usuarios");
-
         jLabel1.setText("Cantidad: ");
 
         txtQuantity.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +89,13 @@ public class MainWindow extends javax.swing.JFrame {
 
         jlDistribuitor.setText("Distribuidor: ");
 
+        buttonGroup1.add(rbCofarma);
         rbCofarma.setText("Cofarma");
 
+        buttonGroup1.add(rbEmpsephar);
         rbEmpsephar.setText("Empsephar");
 
+        buttonGroup1.add(rbCemefar);
         rbCemefar.setText("Cemefar");
 
         jlBranch.setText("Sucursal: ");
@@ -103,29 +123,29 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        jlLogo.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(btnBorrar)
-                        .addGap(152, 152, 152)
-                        .addComponent(btnConfirmar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlMedicamento)
-                                .addComponent(jlType)
-                                .addComponent(jLabel1)
-                                .addComponent(jlDistribuitor)
-                                .addComponent(jlBranch)))
+                        .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(btnBorrar)
+                                .addGap(152, 152, 152)
+                                .addComponent(btnConfirmar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlMedicamento)
+                                    .addComponent(jlType)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jlDistribuitor)
+                                    .addComponent(jlBranch))
                                 .addGap(62, 62, 62)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtMedicinename, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,20 +160,25 @@ public class MainWindow extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(chkPrincipal)
                                         .addGap(18, 18, 18)
-                                        .addComponent(chkSecundaria))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(193, 193, 193)
-                                .addComponent(jlUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(chkSecundaria))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jlHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlMedicamento)
                     .addComponent(txtMedicinename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,7 +205,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBorrar)
                     .addComponent(btnConfirmar))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
@@ -313,9 +338,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jlBranch;
     private javax.swing.JLabel jlDistribuitor;
     private javax.swing.JLabel jlHome;
+    private javax.swing.JLabel jlLogo;
     private javax.swing.JLabel jlMedicamento;
     private javax.swing.JLabel jlType;
-    private javax.swing.JLabel jlUsers;
     private javax.swing.JRadioButton rbCemefar;
     private javax.swing.JRadioButton rbCofarma;
     private javax.swing.JRadioButton rbEmpsephar;
