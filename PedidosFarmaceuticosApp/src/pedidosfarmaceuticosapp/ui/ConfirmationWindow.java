@@ -11,7 +11,7 @@ public class ConfirmationWindow extends javax.swing.JFrame {
         
         getContentPane().setBackground(new java.awt.Color(144, 238, 144));
     }
-    // -------------------- CONSTRUCTOR CON ORDER --------------------
+    // Creacion del constructor-
     public ConfirmationWindow(Order order){
         this.order = order;
         initComponents();
@@ -35,12 +35,12 @@ public class ConfirmationWindow extends javax.swing.JFrame {
         lblAddressInfo.setText(addressInfo);
     }
  
-                                          
+      //clase main                                    
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new ConfirmationWindow().setVisible(true));
     }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // 
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
