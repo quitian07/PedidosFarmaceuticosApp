@@ -11,7 +11,7 @@ public class ConfirmationWindow extends javax.swing.JFrame {
         
         getContentPane().setBackground(new java.awt.Color(144, 238, 144));
     }
-    // Creacion del constructor-
+    // Creacion de los constructores-
     public ConfirmationWindow(Order order){
         this.order = order;
         initComponents();
