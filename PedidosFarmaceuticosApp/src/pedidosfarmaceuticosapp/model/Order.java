@@ -1,5 +1,5 @@
 package pedidosfarmaceuticosapp.model;
-
+//deficiones 
 public class Order {
     private String medicineName;
     private String medicineType;
@@ -56,7 +56,7 @@ public class Order {
         return secondaryBranch;
     }
 
-    public void setSecondaryBranch(boolean secondaryBranch) {
+    public void setSecondaryBranch(boolean secondaryBranch) { //
         this.secondaryBranch = secondaryBranch;
     }
 }
