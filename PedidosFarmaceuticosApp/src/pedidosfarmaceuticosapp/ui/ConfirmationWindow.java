@@ -124,7 +124,7 @@ public class ConfirmationWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEnviarActionPerformed
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Declaration Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JLabel lblAddressInfo;
